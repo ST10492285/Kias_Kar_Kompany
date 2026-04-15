@@ -1,0 +1,19 @@
+﻿@model Kias_Kar_Kompany.Models.Vehicle
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="VehicleId" />
+
+    <input asp-for="VehicleName" class="form-control" />
+    <input asp-for="VehicleModel" class="form-control" />
+    <input asp-for="VehiclePrice" class="form-control" />
+    <input asp-for="VehicleType" class="form-control" />
+    <input asp-for="VehicleImageURL" class="form-control" />
+
+    <select asp-for="ManufacturerId"
+            class="form-select"
+            asp-items="@(new SelectList(ViewBag.Manufacturers, "Id", "Manufacturer_Name"))">
+    </select>
+
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
